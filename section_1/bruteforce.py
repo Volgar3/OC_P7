@@ -1,23 +1,17 @@
 import time 
 import csv
 
-data_path = "excel/liste_action_section_1.csv"
+csv_path = "excel/liste_action_section_1.csv"
 
 def extract_data_from_CSV(csv):
-
-    data_path = csv
-    with open(data_path, newline='') as action_csv:
         
-        data = []
-        for line in action_csv:
-            data.append(line)
-    
-    return data
+    with open(csv_path, newline='') as action_csv:
+        return action_csv.read().splitlines()
 
 
 def clean_data():
     
-    brut_actions = extract_data_from_CSV(data_path)
+    brut_actions = extract_data_from_CSV(csv_path)
         
     actions = []
     for i in brut_actions[1:]:
@@ -29,9 +23,10 @@ def clean_data():
             
     return actions 
 
-
-
 sorted_actions = clean_data()
-for action in sorted_actions:
-    print(action)
-print(type(sorted_actions[0][2]))
+
+# --- Print all actions ---
+# for action in sorted_actions:
+#     print(action)
+# print(type(sorted_actions[0][2]))
+
