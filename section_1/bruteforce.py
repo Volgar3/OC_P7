@@ -18,7 +18,8 @@ def data_treatement():
         action = { 
             "name": action_data[0],
             "price": (int(action_data[1])),
-            "benefits_after_2_years": ((int(action_data[1]) * int(action_data[2].strip().replace('%', '')) / 100)) + int(action_data[1])
+            "percentage_benefits": int(action_data[2].strip().replace('%', '')),
+            "euros_benefits": ((int(action_data[1]) * int(action_data[2].strip().replace('%', '')) / 100)) + int(action_data[1])
         }
         actions.append(action)
     return actions
@@ -27,9 +28,3 @@ actions = data_treatement()
 
 for action in actions:
     print(action)
-    
-    
-    
-    
-
-    
