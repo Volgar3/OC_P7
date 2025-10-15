@@ -90,6 +90,4 @@ csv_path = "excel/liste_action_section_1.csv"
 actions = data_treatement()
 actions.sort(key=lambda item: item["euros_benefits"], reverse=True)
 budget = 500
-# on récupère les combinaisons (inutile d'appeler sans affectation)
-result_comb_total = get_combinations(actions, budget)
 best_comb()
